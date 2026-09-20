@@ -296,14 +296,52 @@ git push origin main
 
 ## Parcial 2 — Consumo de API (completar por el estudiante)
 
-**Nombre:** _________________________________ · **Carnet:** ______________
+**Nombre:** Ricardo Fabio Menjivar · **Carnet:** [TU_CARNET_AQUÍ]
 
 ### Salida de consola (segunda ejecución)
 
-```
-(pegue aquí la salida completa de la segunda ejecución de Main)
+```text
+Tabla producto lista.
+
+--- Inventario inicial ---
+ID    PRODUCTO                  CANTIDAD  
+1     Teclado mecanico                15
+2     Monitor 24 pulgadas              8
+
+Respaldo generado en inventario.json
+Producto 2 actualizado.
+Producto 1 eliminado.
+
+--- Despues de los cambios ---
+ID    PRODUCTO                  CANTIDAD  
+2     Monitor 24 pulgadas             12
+
+Registros restaurados desde JSON: 2
+
+--- Inventario final ---
+ID    PRODUCTO                  CANTIDAD  
+1     Teclado mecanico                15
+2     Monitor 24 pulgadas             12
+
+Sincronizacion con la API -> insertados: 0 | actualizados: 10
+--- Inventario sincronizado ---
+ID    PRODUCTO                  CANTIDAD  
+1     Essence Mascara Lash Princess         99
+2     Eyeshadow Palette with Mirror         34
+3     Powder Canister                       89
+4     Red Lipstick                          10
+5     Red Nail Polish                       74
+6     Calvin Klein CK One                   17
+7     Chanel Coco Noir Eau De               86
+8     Dior J'adore                          96
+9     Dolce Shine Eau de                    10
+10    Gucci Bloom Eau de                    91
 ```
 
 ### Uso de inteligencia artificial
 
-(Declare si utilizó alguna herramienta de IA, cuál y para qué. Si no la utilizó, indíquelo.)
+Se utilizó la herramienta de Inteligencia Artificial Gemini como asistente de desarrollo para:
+* Diseñar e implementar las clases DTO `ProductoApi` y `RespuestaProductos`, configurando la anotación `@JsonIgnoreProperties(ignoreUnknown = true)` y la lógica de conversión `aProducto()` con recorte a 50 caracteres.
+* Estructurar el cliente `ProveedorAPI` utilizando `java.net.http.HttpClient` para el consumo del endpoint GET y deserialización del JSON con Jackson.
+* Validar la lógica de sincronización idempotente en `SincronizacionService` mediante la comprobación de existencia previa en `ProductoDAO`.
+* Completar el flujo en `Main.java` asegurando el manejo no vacío de las excepciones `SQLException`, `IOException` e `InterruptedException`.
