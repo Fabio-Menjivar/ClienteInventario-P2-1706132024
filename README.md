@@ -296,7 +296,7 @@ git push origin main
 
 ## Parcial 2 — Consumo de API (completar por el estudiante)
 
-**Nombre:** Ricardo Fabio Menjivar · **Carnet:** [TU_CARNET_AQUÍ]
+**Nombre:** Ricardo Fabio Menjivar · **Carnet:** 17-0613-2024
 
 ### Salida de consola (segunda ejecución)
 
